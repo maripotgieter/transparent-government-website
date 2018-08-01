@@ -8,7 +8,7 @@ var statistics = [
         "Average 'Votes with party' for Independents": 0,
         "Least engaged names": 0,
         "Least engaged number of missed votes": 0,
-        "Least engaged percentage missed votes": 0,
+        "Least engaged percentage tableLeastEngagedmissed votes": 0,
         "Most engaged names": 0,
         "Most engaged number of missed votes": 0,
         "Most engaged percentage of missed votes": 0,
@@ -36,7 +36,7 @@ function showPage() {
     document.getElementById("myDiv").style.display = "block";
 }
 
-if (location.pathname == '/C:/Users/potgi/OneDrive/Documents/Ubiqum/Module%202/task_4_refactor/senate-attendance.html' || location.pathname == '/C:/Users/potgi/OneDrive/Documents/Ubiqum/Module%202/task_4_refactor/senate-party%20loyalty.html') {
+if (location.pathname == '/transparent-government-website/senate-attendance.html' || location.pathname == '/transparent-government-website/senate-party%20loyalty.html') {
     start("https://api.propublica.org/congress/v1/113/senate/members.json");
 } else {
     start("https://api.propublica.org/congress/v1/113/house/members.json");
@@ -91,7 +91,7 @@ function start(url) {
 
 function functionThatStoresDifferentLocations() {
 
-    if (location.pathname == '/C:/Users/potgi/OneDrive/Documents/Ubiqum/Module%202/task_4_refactor/senate-party%20loyalty.html' || location.pathname == '/C:/Users/potgi/OneDrive/Documents/Ubiqum/Module%202/task_4_refactor/house-party-loyalty.html') {
+    if (location.pathname == '/transparent-government-website/senate-party%20loyalty.html' || location.pathname == '/transparent-government-website/house-party-loyalty.html') {
         tableBody_1 = document.getElementById('at-a-glance');
         Row_1 = document.getElementById('party');
         Row_2 = document.getElementById('number');
@@ -103,7 +103,7 @@ function functionThatStoresDifferentLocations() {
         tableMostLoyal();
         tableSenateAtAGlance();
 
-    } else if (location.pathname == '/C:/Users/potgi/OneDrive/Documents/Ubiqum/Module%202/task_4_refactor/house-attendance.html' || location.pathname == '/C:/Users/potgi/OneDrive/Documents/Ubiqum/Module%202/task_4_refactor/senate-attendance.html') {
+    } else if (location.pathname == '/transparent-government-website/house-attendance.html' || location.pathname == '/transparent-government-website/senate-attendance.html') {
         tableBody_1 = document.getElementById('at-a-glance');
         tableBody_2 = document.getElementById('least-engaged');
         tableBody_3 = document.getElementById('most-engaged');
