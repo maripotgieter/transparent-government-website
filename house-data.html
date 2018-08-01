@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+
+<body>
+
+    <div id="loader"></div>
+
+    <div class="container floating">
+
+        <img src="images/lotus-with-hands-1889661_1280.png" alt="lotus logo with hands">
+        <h2 id="TGIF">Transparent Government in Fact</h2>
+
+        <a class="mail" href="mailto:info@tgif.net" target="_top" class="mail"><i class="fa fa-envelope"></i> info@tgif.net</a>
+        <!-- <p>https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment</p>-->
+
+    </div>
+
+    <div class="container" id = "main">
+         <nav>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class = "nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#">Congress 113</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="house-data.html">House</a>
+                        <a class="dropdown-item" href="senate-data.html">Senate</a></div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#">Attendance</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="house-attendance.html">House</a>
+                        <a class="dropdown-item" href="senate-attendance.html">Senate</a></div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#">Party Loyalty</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="house-party-loyalty.html">House</a>
+                        <a class="dropdown-item" href="senate-party%20loyalty.html">Senate</a></div>
+                </li>
+            </ul>
+
+        </nav>
+
+
+        <div class="pic"><img src="images/pexels-photo-590011.jpeg" alt=""></div>
+        <div id="myDiv" class="animate-bottom">
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2>Congressmen</h2>
+                    <p class="text-justify">The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+                    <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+
+                </div>
+            </div>
+
+            <div class="checkboxes">
+                <h4>Party Affiliation</h4>
+                <input type="checkbox" name="party affiliation" value="democrat" @click ="filter" id="democrat" checked>Democrat
+                <input type="checkbox" name="party affiliation" value="republican" @click ="filter" id="republican" checked>Republican
+                <input type="checkbox" name="party affiliation" value="independent" @click ="filter"  id="independent" checked>Independent
+
+            </div>
+
+            <table id="senate-data" class="table table-striped">
+                <thead>
+                    <th class = "column width">Senator</th>
+                    <th class = "column width">Party Affiliation</th>
+                    <th class = "column width">State
+                        <form name="filter" id="FilterForm" action="" method="">
+                            <div id="select-filter">
+                                <select id="state-filter" class="filter" v-on:change="filter"> 
+                <option value="all">All</option>
+<!--                <option v-for="state in states" :value='state'>{{state}}</option>-->
+                </select></div>
+                        </form>
+                    </th>
+                    <th class = "column width">Years in Office</th>
+                    <th class = "column width">Percentage of Votes</th>
+                </thead>
+
+                <tbody id="table-body">
+                    <tr v-for="member in members">
+                        <td>{{member.first_name}} <span v-if="member.middle_name">{{member.middle_name}} </span> {{member.last_name}}</td>
+                        <td>{{member.party}}</td>
+                        <td>{{member.state}}</td>
+                        <td>{{member.seniority}}</td>
+                        <td>{{member.votes_with_party_pct}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            
+            <p id = "alert">Please select a checkbox!</p>
+
+            <div class="ft" class="border border-light">
+                <div class="footer-copyright text-center py-3">© 2018 Copyright: All Rights Reserved
+                    <!--<a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<script src="pro-congress-113-house.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!--    <script src = "main_vue.js"></script>-->
+    <script src="main_1.js"></script>
+</body>
+
+
+
+</html>
